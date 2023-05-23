@@ -1,0 +1,50 @@
+Baixando a imagem no Docker Hub;
+docker pull mysql
+
+Executando a imagem e configurando o MySQL, na porta 3306 padrão:
+docker run -e MYSQL_ROOT_PASSWORD=minha_senha --name mysql-A -d -p 3306:3306 mysql
+
+Acessando o bash do container MySQL:
+docker exec -it mysql-A bash
+
+Logando como root para criação do banco de dados, dentro do bash:
+mysql -u root -p --protocol=tcp
+
+Criando um banco de dados:
+CREATE DATABASE bancoteste;
+
+Listando os banco de dados:
+show databases;
+
+Comandos extras:
+
+Para mostrar as informarções de rede dos meus containers criados:
+ip a
+
+Para mostrar as configurações de rede do meu container mysql, incluindo o ip, portas:
+docker inspect [nome_container_mysql]
+
+Ex: docker inspect mysql-A
+
+Instalando o cliente do mysql na minha vps:
+apt -y install mysql-client
+
+Utilizando o comando, dentro da minha vps sem acessar o container, eu consigo acessar diretamente sem precisar logar no container, via cliente do mysql que eu fiz a instalação anteriormente:
+mysql -u root -p --protocol=TCP
+
+Acessando o container externamente:
+Nesse caso, utilizando o comando ip a, mostra que o meu ip para acesso externo é o 192.168.65.5 .
+Realizei a configuração do banco no DBeaver, acessei externo via ip, criei uma tabela e inseri um registro para teste:
+
+CREATE TABLE alunos (
+    AlunoID int,
+    Nome varchar(50),
+    Sobrenome varchar(50),
+    Endereco varchar(150),
+    Cidade varchar (50) 
+);
+
+INSERT INTO alunos(AlunoID, Nome, Sobrenome, Endereco, Cidade)
+VALUES (1, 'Pedro', 'Pinca', 'Rua do Outeiro', 'Portugal'); (editado)
+
+1
