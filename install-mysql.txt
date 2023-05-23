@@ -28,7 +28,7 @@ docker inspect [nome_container_mysql]
 
 Ex: docker inspect mysql-A
 
-Instalando o cliente do mysql na vps:
+Instalando o cliente do mysql no servidor Ubuntu:
 apt -y install mysql-client
 
 Acessando via client mysql:
