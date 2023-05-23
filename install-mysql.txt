@@ -1,3 +1,5 @@
+Configurando um container do MySQL no Docker;
+
 Baixando a imagem no Docker Hub;
 docker pull mysql
 
