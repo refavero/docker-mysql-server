@@ -26,14 +26,14 @@ docker inspect [nome_container_mysql]
 
 Ex: docker inspect mysql-A
 
-Instalando o cliente do mysql na minha vps:
+Instalando o cliente do mysql na vps:
 apt -y install mysql-client
 
-Utilizando o comando, dentro da minha vps sem acessar o container, eu consigo acessar diretamente sem precisar logar no container, via cliente do mysql que eu fiz a instalação anteriormente:
+Acessando via client mysql:
 mysql -u root -p --protocol=TCP
 
 Acessando o container externamente:
-Nesse caso, utilizando o comando ip a, mostra que o meu ip para acesso externo é o 192.168.65.5 .
+Utilizando o comando ip a, para verificar o meu ip externo .
 Realizei a configuração do banco no DBeaver, acessei externo via ip, criei uma tabela e inseri um registro para teste:
 
 CREATE TABLE alunos (
@@ -45,6 +45,6 @@ CREATE TABLE alunos (
 );
 
 INSERT INTO alunos(AlunoID, Nome, Sobrenome, Endereco, Cidade)
-VALUES (1, 'Pedro', 'Pinca', 'Rua do Outeiro', 'Portugal'); (editado)
+VALUES (1, 'Pedro', 'Teste', 'Rua teste', 'Portugal');
 
-1
+
